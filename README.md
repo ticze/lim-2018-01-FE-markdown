@@ -153,7 +153,13 @@ mdLinks("./some/example.md", { validate: true })
 
 mdLinks("./some/example.md", { stats: true })
   .then(links => {
-    // => [{ href, text, file, total, unique, domains }]
+    // => [{total, unique }]
+  })
+  .catch(console.error);
+
+  mdLinks("./some/example.md", { stats: true, validate:true })
+  .then(links => {
+    // => [{total, unique, broken }]
   })
   .catch(console.error);
 
