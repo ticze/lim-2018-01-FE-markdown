@@ -24,8 +24,8 @@ algunas estadísticas.
 [Node.js](https://nodejs.org/es/) es un entorno de ejecución para JavaScript
 construido con el [motor de JavaScript V8 de Chrome](https://developers.google.com/v8/).
 Esto nos va a permitir ejecuta JavaScript en el entorno del sistema operativo,
-ya sea tu máquina o un servidor, lo cual nos abre las puertas para poder interactuar con
-el sistema operativo, sistema de archivos, redes, ...
+ya sea tu máquina o un servidor, lo cual nos abre las puertas para poder interac
+tuar con el sistema operativo, sistema de archivos, redes, ...
 En este proyecto nos alejamos un poco del navegador para construir un programa
 que se ejecute usando Node.js, donde aprenderemos sobre cómo interactuar con el
 sistema archivos, con el entorno (proceso, env, stdin/stdout/stderr), ...
@@ -91,7 +91,8 @@ En el archivo _README_ de tu proyecto tendrás que incluir:
 - Documentación de la Librería (Features, link de Demo, test, etc...).
 - Ejemplos (_snippets_) de uso.
 
-Y todo lo relevante para que cualquier developer que quiera usar tu librería pueda hacerlo sin inconvenientes
+Y todo lo relevante para que cualquier developer que quiera usar tu librería
+pueda hacerlo sin inconvenientes
 
 ### Archivos del proyecto
 
@@ -118,11 +119,15 @@ siguiente interfaz:
 
 ##### Argumentos
 
-- `path`: Ruta absoluta o relativa al archivo o directorio. Si la ruta pasada es relativa, debe resolverse como relativa al directorio desde donde se invoca node - _currentworking directory_).
+- `path`: Ruta absoluta o relativa al archivo o directorio. Si la ruta pasada es
+ relativa, debe resolverse como relativa al directorio desde donde se invoca
+ node - _currentworking directory_).
 
 - `options`: Un objeto con las siguientes propiedades:
-  - `validate`: Valor que determina si se desea validar los links encontrados en el archivo. (tipo de dato booleano)
-  - `stats`: Valor que determina si se desea calcular los stats de de los links encontrados en el archivo. (tipo de dato booleano)
+  - `validate`: Valor que determina si se desea validar los links encontrados en
+   el archivo. (tipo de dato booleano)
+  - `stats`: Valor que determina si se desea calcular los stats de de los links
+  encontrados en el archivo. (tipo de dato booleano)
 
 ##### Valor de retorno
 
@@ -236,7 +241,7 @@ Broken: 1
 
 ## Entregables
 
-Módulo instalable via `npm install <github-user>/md-links`. Este módulo debe
+Módulo instalable directamente desde el repositorio de Github via `npm install <github-user>/md-links`. Este módulo debe
 incluir tanto un ejecutable como una interfaz que podamos importar con `require`
 para usarlo programáticamente.
 
@@ -257,6 +262,7 @@ para usarlo programáticamente.
 - [Leer un Directorio](https://nodejs.org/api/fs.html#fs_fs_readdir_path_options_callback)
 - [Path](https://nodejs.org/api/path.html)
 - [Linea de comando CLI](https://medium.com/netscape/a-guide-to-create-a-nodejs-command-line-package-c2166ad0452e)
+- [npm install githubname/reponame](https://docs.npmjs.com/cli/install)
 
 ### Tutoriales / NodeSchool workshoppers
 
@@ -315,7 +321,9 @@ habilidades blandas. Te aconsejamos revisar la rúbrica:
 
 ### General
 
-- [ ] Entrega el link del módulo publicado en npm
+Que sea instalable directamente desde el repositorio de Github
+
+- [ ] `npm install --global <github-user>/md-links`
 
 ### `README.md`
 
