@@ -345,7 +345,6 @@ Que sea instalable directamente desde el repositorio de Github
 - [ ] Implementa `--validate`
 - [ ] Implementa `--stats`
 - [ ] Implementa `--validate --stats`
-- [ ] Implementa `--stats --validate`
 
 ### Pruebas / tests
 
