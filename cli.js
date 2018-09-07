@@ -6,11 +6,11 @@ const path = require('path');
 const route = path.resolve(args[0]);
 const program = require('commander');
 
-const highOrderMdLinks =(route,options)=>{
-  mdLinks(route,options)
-  .then(console.log)
+const highOrderMdLinks = (route, options) => {
+  mdLinks(route, options)
+    .then(console.log)
 }
- 
+
 program
   .version('0.1.0')
   .arguments('<path>')
