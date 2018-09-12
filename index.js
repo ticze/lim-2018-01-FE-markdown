@@ -3,19 +3,15 @@ const linkCheck = require('link-check');
 const markdownLinkExtractor = require('markdown-link-extractor');
 
 
-const recDirect = (ruta,options) => {
+const recDirect = (ruta, options) => {
   fs.readdir(ruta, (err, data) => {
     data.forEach(file => {
-      const fileRec = ruta  + '/' + file
-      // console.log(fileRec)
+      const fileRec = ruta + '/' + file
       fs.stat(fileRec, (err, stats) => {
         if (stats.isDirectory()) {
           return recDirect(fileRec)
-          // return recDirect(ruta)
         } else if (stats.isFile()) {
-          console.log(fileRec)
-          console.log('lo logramos')
-          return recFile(fileRec,options)
+          return recFile(fileRec, options)
         }
       })
     })
@@ -54,15 +50,16 @@ const valiStats = (ruta) => {
         arrNewLinks.forEach(link => {
           arrPromise.push(checkLinks(link))
         })
-        Promise.all(arrPromise)
+        return Promise.all(arrPromise)
           .then(valLink => {
             let broken = 0;
-            if (valLink.status !== 200) {
-             broken++;
-            }
+            valLink.forEach(linkStatus => {
+              if (linkStatus.status !== 200) {
+                return broken++;
+              }
+            })
             console.log(`Total: ${arrNewLinks.length}\nUnique: ${onlyLinks(arrNewLinks).length}\nBorken:${broken}`)
           })
-          
       }))
   })
 }
@@ -86,21 +83,21 @@ const validate = (ruta) => {
         links.forEach((link) => {
           arrPromise.push(checkLinks(link.href))
         })
-        Promise.all(arrPromise)
-          .then(console.log)
-      }))
+        return Promise.all(arrPromise)
+      })
+    )
   })
 }
 
-const recFile =(ruta,options)=>{
+const recFile = (ruta, options) => {
   if (!options.validate && !options.stats) {
-    extracLinks(ruta).then(console.log)
+    return extracLinks(ruta)
   } else if (options.validate && !options.stats) {
-    validate(ruta);
+    return validate(ruta);
   } else if (!options.validate && options.stats) {
-    stat(ruta);
+    return stat(ruta);
   } else if (options.validate && options.stats) {
-    valiStats(ruta);
+    return valiStats(ruta);
   }
 }
 
@@ -108,9 +105,9 @@ const mdLinks = (path, options) => {
   return new Promise((resolve, reject) => {
     fs.stat(path, (err, stats) => {
       if (stats.isFile()) {
-        recFile(path,options)
+        resolve(recFile(path, options))
       } else if (stats.isDirectory()) {
-        recDirect(path,options)
+        recDirect(path, options)
       }
     })
   })

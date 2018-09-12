@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="index.html">All files</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">84.06% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>58/69</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">67.86% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>19/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">86.21% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>25/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">84.06% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>58/69</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const fs = require('fs');
+const linkCheck = require('link-check');
+const markdownLinkExtractor = require('markdown-link-extractor');
+&nbsp;
+&nbsp;
+const recDirect = <span class="fstat-no" title="function not covered" >(r</span>uta, options) =&gt; {
+<span class="cstat-no" title="statement not covered" >  fs.readdir(ruta, <span class="fstat-no" title="function not covered" >(e</span>rr, data) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    data.forEach(<span class="fstat-no" title="function not covered" >fi</span>le =&gt; {</span>
+      const fileRec = <span class="cstat-no" title="statement not covered" >ruta + '/' + file</span>
+<span class="cstat-no" title="statement not covered" >      fs.stat(fileRec, <span class="fstat-no" title="function not covered" >(e</span>rr, stats) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (stats.isDirectory()) {</span>
+<span class="cstat-no" title="statement not covered" >          return recDirect(fileRec)</span>
+        } else <span class="cstat-no" title="statement not covered" >if (stats.isFile()) {</span>
+<span class="cstat-no" title="statement not covered" >          return recFile(fileRec, options)</span>
+        }
+      })
+    })
+  })
+}
+&nbsp;
+&nbsp;
+const extracLinks = (ruta) =&gt; {
+  return new Promise((resolve, reject) =&gt; {
+    const markdown = fs.readFileSync(ruta).toString();
+    const links = markdownLinkExtractor(markdown);
+    resolve(links)
+  })
+}
+const checkLinks = (link) =&gt; {
+  return new Promise((resolve, reject) =&gt; {
+    linkCheck(link, function (err, result) {
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (err) {
+<span class="cstat-no" title="statement not covered" >        reject(err);</span>
+      }
+      resolve({ link: result.link, status: result.statusCode });
+    });
+  })
+}
+const onlyLinks = (link) =&gt; {
+  return [...new Set(link)];
+}
+const valiStats = (ruta) =&gt; {
+  return new Promise((resolve, reject) =&gt; {
+    resolve(extracLinks(ruta)
+      .then(arrLink =&gt; {
+        const arrNewLinks = arrLink.map(uniqueLink =&gt; {
+          return uniqueLink.href
+        })
+        let arrPromise = [];
+        arrNewLinks.forEach(link =&gt; {
+          arrPromise.push(checkLinks(link))
+        })
+        return Promise.all(arrPromise)
+          .then(valLink =&gt; {
+            let broken = 0;
+            valLink.forEach(linkStatus =&gt; {
+              if (linkStatus.status !== 200) {
+                return broken++;
+              }
+            })
+            console.log(`Total: ${arrNewLinks.length}\nUnique: ${onlyLinks(arrNewLinks).length}\nBorken:${broken}`)
+          })
+      }))
+  })
+}
+const stat = (ruta) =&gt; {
+  return new Promise((resolve, reject) =&gt; {
+    resolve(extracLinks(ruta)
+      .then(arrLink =&gt; {
+        const arrNewLinks = arrLink.map(uniqueLink =&gt; {
+          return uniqueLink.href
+        })
+        console.log(`Total: ${arrNewLinks.length}\nUnique: ${onlyLinks(arrNewLinks).length}`)
+      })
+    )
+  })
+}
+const validate = (ruta) =&gt; {
+  return new Promise((resolve, reject) =&gt; {
+    resolve(extracLinks(ruta)
+      .then(links =&gt; {
+        let arrPromise = [];
+        links.forEach((link) =&gt; {
+          arrPromise.push(checkLinks(link.href))
+        })
+        return Promise.all(arrPromise)
+      })
+    )
+  })
+}
+&nbsp;
+const recFile = (ruta, options) =&gt; {
+  if (!options.validate &amp;&amp; !options.stats) {
+    return extracLinks(ruta)
+  } else if (options.validate &amp;&amp; !options.stats) {
+    return validate(ruta);
+  } else if (!options.validate &amp;&amp; options.stats) {
+    return stat(ruta);
+  } else <span class="missing-if-branch" title="else path not taken" >E</span>if (options.validate &amp;&amp; options.stats) {
+    return valiStats(ruta);
+  }
+}
+&nbsp;
+const mdLinks = (path, options) =&gt; {
+  return new Promise((resolve, reject) =&gt; {
+    fs.stat(path, (err, stats) =&gt; {
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (stats.isFile()) {
+        resolve(recFile(path, options))
+      } else <span class="cstat-no" title="statement not covered" >if (stats.isDirectory()) {</span>
+<span class="cstat-no" title="statement not covered" >        recDirect(path, options)</span>
+      }
+    })
+  })
+}
+module.exports = mdLinks;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Sep 12 2018 18:12:32 GMT-0500 (Hora est. Pacífico, Sudamérica)
+</div>
+</div>
+<script src="prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="sorter.js"></script>
+</body>
+</html>

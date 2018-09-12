@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`resolver mdLinks(test/src/index.md, options) -> options.stats = true && options.validate = false 1`] = `undefined`;
+
+exports[`resolver mdLinks(test/src/index.md, options) -> options.stats = true && options.validate = true 1`] = `undefined`;

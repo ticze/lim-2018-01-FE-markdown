@@ -17,7 +17,6 @@ module.exports = function markdownLinkExtractor(markdown) {
     renderer.link = function (href, title, text) {
         links.push({
           href,
-          title,
           text
         });
     };
@@ -26,7 +25,6 @@ module.exports = function markdownLinkExtractor(markdown) {
         href = href.replace(/ =\d*%?x\d*%?$/, "");
         links.push({
           href,
-          title,
           text
         });
     };
