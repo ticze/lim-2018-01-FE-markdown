@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">84.06% </span>
+        <span class="strong">98.53% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>58/69</span>
+        <span class='fraction'>67/68</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">67.86% </span>
+        <span class="strong">91.67% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>19/28</span>
+        <span class='fraction'>22/24</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">86.21% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>25/29</span>
+        <span class='fraction'>26/26</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">84.06% </span>
+        <span class="strong">98.53% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>58/69</span>
+        <span class='fraction'>67/68</span>
       </div>
     </div>
   </div>
@@ -157,23 +157,22 @@
 112
 113
 114
-115
-116</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+115</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -235,6 +234,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -250,6 +250,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -259,6 +260,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -266,31 +268,27 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const fs = require('fs');
+const path = require('path')
 const linkCheck = require('link-check');
 const markdownLinkExtractor = require('markdown-link-extractor');
 &nbsp;
 &nbsp;
-const recDirect = <span class="fstat-no" title="function not covered" >(r</span>uta, options) =&gt; {
-<span class="cstat-no" title="statement not covered" >  fs.readdir(ruta, <span class="fstat-no" title="function not covered" >(e</span>rr, data) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    data.forEach(<span class="fstat-no" title="function not covered" >fi</span>le =&gt; {</span>
-      const fileRec = <span class="cstat-no" title="statement not covered" >ruta + '/' + file</span>
-<span class="cstat-no" title="statement not covered" >      fs.stat(fileRec, <span class="fstat-no" title="function not covered" >(e</span>rr, stats) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (stats.isDirectory()) {</span>
-<span class="cstat-no" title="statement not covered" >          return recDirect(fileRec)</span>
-        } else <span class="cstat-no" title="statement not covered" >if (stats.isFile()) {</span>
-<span class="cstat-no" title="statement not covered" >          return recFile(fileRec, options)</span>
-        }
-      })
+const recDirect = (ruta, options, result) =&gt; {
+  if (fs.statSync(ruta).isFile()) {
+    if(path.extname(ruta) === '.md') {
+      recFile(ruta, options, result)
+    }
+  } else {
+    const data = fs.readdirSync(ruta)
+    data.forEach(file =&gt; {
+      const fileRec = ruta + '/' + file
+      recDirect(fileRec, options, result)
     })
-  })
+  }
 }
 &nbsp;
 &nbsp;
@@ -305,7 +303,7 @@ const checkLinks = (link) =&gt; {
   return new Promise((resolve, reject) =&gt; {
     linkCheck(link, function (err, result) {
       <span class="missing-if-branch" title="if path not taken" >I</span>if (err) {
-<span class="cstat-no" title="statement not covered" >        reject(err);</span>
+<span class="cstat-no" title="statement not covered" >      return reject(err);</span>
       }
       resolve({ link: result.link, status: result.statusCode });
     });
@@ -346,6 +344,7 @@ const stat = (ruta) =&gt; {
           return uniqueLink.href
         })
         console.log(`Total: ${arrNewLinks.length}\nUnique: ${onlyLinks(arrNewLinks).length}`)
+        // resolve(`{Total: ${arrNewLinks.length}\nUnique:${onlyLinks(arrNewLinks).length}}`)
       })
     )
   })
@@ -364,27 +363,25 @@ const validate = (ruta) =&gt; {
   })
 }
 &nbsp;
-const recFile = (ruta, options) =&gt; {
+const recFile = (ruta, options, result) =&gt; {
+  let toReturn;
   if (!options.validate &amp;&amp; !options.stats) {
-    return extracLinks(ruta)
+    toReturn = extracLinks(ruta)
   } else if (options.validate &amp;&amp; !options.stats) {
-    return validate(ruta);
+    toReturn = validate(ruta);
   } else if (!options.validate &amp;&amp; options.stats) {
-    return stat(ruta);
+    toReturn = stat(ruta);
   } else <span class="missing-if-branch" title="else path not taken" >E</span>if (options.validate &amp;&amp; options.stats) {
-    return valiStats(ruta);
+    toReturn = valiStats(ruta);
   }
+  result.push(toReturn)
 }
 &nbsp;
 const mdLinks = (path, options) =&gt; {
   return new Promise((resolve, reject) =&gt; {
-    fs.stat(path, (err, stats) =&gt; {
-      <span class="missing-if-branch" title="else path not taken" >E</span>if (stats.isFile()) {
-        resolve(recFile(path, options))
-      } else <span class="cstat-no" title="statement not covered" >if (stats.isDirectory()) {</span>
-<span class="cstat-no" title="statement not covered" >        recDirect(path, options)</span>
-      }
-    })
+    const result = []
+    recDirect(path, options, result)
+    Promise.all(result).then(resolve)
   })
 }
 module.exports = mdLinks;
@@ -394,7 +391,7 @@ module.exports = mdLinks;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Sep 12 2018 18:12:32 GMT-0500 (Hora est. Pacífico, Sudamérica)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Sep 13 2018 16:51:39 GMT-0500 (Hora est. Pacífico, Sudamérica)
 </div>
 </div>
 <script src="prettify.js"></script>

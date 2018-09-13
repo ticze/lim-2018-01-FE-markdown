@@ -1,21 +1,21 @@
 const fs = require('fs');
+const path = require('path')
 const linkCheck = require('link-check');
 const markdownLinkExtractor = require('markdown-link-extractor');
 
 
-const recDirect = (ruta, options) => {
-  fs.readdir(ruta, (err, data) => {
+const recDirect = (ruta, options, result) => {
+  if (fs.statSync(ruta).isFile()) {
+    if(path.extname(ruta) === '.md') {
+      recFile(ruta, options, result)
+    }
+  } else {
+    const data = fs.readdirSync(ruta)
     data.forEach(file => {
       const fileRec = ruta + '/' + file
-      fs.stat(fileRec, (err, stats) => {
-        if (stats.isDirectory()) {
-          return recDirect(fileRec)
-        } else if (stats.isFile()) {
-          return recFile(fileRec, options)
-        }
-      })
+      recDirect(fileRec, options, result)
     })
-  })
+  }
 }
 
 
@@ -30,7 +30,7 @@ const checkLinks = (link) => {
   return new Promise((resolve, reject) => {
     linkCheck(link, function (err, result) {
       if (err) {
-        reject(err);
+      return reject(err);
       }
       resolve({ link: result.link, status: result.statusCode });
     });
@@ -71,7 +71,7 @@ const stat = (ruta) => {
           return uniqueLink.href
         })
         console.log(`Total: ${arrNewLinks.length}\nUnique: ${onlyLinks(arrNewLinks).length}`)
-      })
+        })
     )
   })
 }
@@ -89,27 +89,25 @@ const validate = (ruta) => {
   })
 }
 
-const recFile = (ruta, options) => {
+const recFile = (ruta, options, result) => {
+  let toReturn;
   if (!options.validate && !options.stats) {
-    return extracLinks(ruta)
+    toReturn = extracLinks(ruta)
   } else if (options.validate && !options.stats) {
-    return validate(ruta);
+    toReturn = validate(ruta);
   } else if (!options.validate && options.stats) {
-    return stat(ruta);
+    toReturn = stat(ruta);
   } else if (options.validate && options.stats) {
-    return valiStats(ruta);
+    toReturn = valiStats(ruta);
   }
+  result.push(toReturn)
 }
 
 const mdLinks = (path, options) => {
   return new Promise((resolve, reject) => {
-    fs.stat(path, (err, stats) => {
-      if (stats.isFile()) {
-        resolve(recFile(path, options))
-      } else if (stats.isDirectory()) {
-        recDirect(path, options)
-      }
-    })
+    const result = []
+    recDirect(path, options, result)
+    Promise.all(result).then(resolve)
   })
 }
 module.exports = mdLinks;
