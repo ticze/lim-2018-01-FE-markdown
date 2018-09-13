@@ -71,7 +71,7 @@ const stat = (ruta) => {
           return uniqueLink.href
         })
         console.log(`Total: ${arrNewLinks.length}\nUnique: ${onlyLinks(arrNewLinks).length}`)
-        })
+      })
     )
   })
 }
