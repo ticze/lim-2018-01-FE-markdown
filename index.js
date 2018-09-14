@@ -28,7 +28,7 @@ const extracLinks = (ruta) => {
 }
 const checkLinks = (link) => {
   return new Promise((resolve, reject) => {
-    linkCheck(link, function (err, result) {
+    linkCheck(link, (err, result) => {
       if (err) {
         return reject(err);
       }
