@@ -8,7 +8,7 @@ const program = require('commander');
 
 const highOrderMdLinks = (route, options) => {
   mdLinks(route, options)
-    .then(console.log)
+    .then(respuesta => console.log(respuesta))
 }
 
 program

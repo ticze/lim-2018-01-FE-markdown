@@ -6,7 +6,7 @@ const markdownLinkExtractor = require('markdown-link-extractor');
 
 const recDirect = (ruta, options, result) => {
   if (fs.statSync(ruta).isFile()) {
-    if(path.extname(ruta) === '.md') {
+    if (path.extname(ruta) === '.md') {
       recFile(ruta, options, result)
     }
   } else {
@@ -30,9 +30,9 @@ const checkLinks = (link) => {
   return new Promise((resolve, reject) => {
     linkCheck(link, function (err, result) {
       if (err) {
-      return reject(err);
+        return reject(err);
       }
-      resolve({ link: result.link, status: result.statusCode });
+      resolve({ Link: result.link, Status: result.statusCode });
     });
   })
 }
@@ -41,7 +41,7 @@ const onlyLinks = (link) => {
 }
 const valiStats = (ruta) => {
   return new Promise((resolve, reject) => {
-    resolve(extracLinks(ruta)
+    extracLinks(ruta)
       .then(arrLink => {
         const arrNewLinks = arrLink.map(uniqueLink => {
           return uniqueLink.href
@@ -54,25 +54,32 @@ const valiStats = (ruta) => {
           .then(valLink => {
             let broken = 0;
             valLink.forEach(linkStatus => {
-              if (linkStatus.status !== 200) {
+              if (linkStatus.Status !== 200) {
+                // console.log(linkStatus.Status)
                 return broken++;
               }
             })
-            console.log(`Total: ${arrNewLinks.length}\nUnique: ${onlyLinks(arrNewLinks).length}\nBorken:${broken}`)
+            resolve({
+              Total: arrNewLinks.length,
+               Unique: onlyLinks(arrNewLinks).length, 
+               Borken : broken
+            })
           })
-      }))
+      })
   })
 }
 const stat = (ruta) => {
   return new Promise((resolve, reject) => {
-    resolve(extracLinks(ruta)
+    extracLinks(ruta)
       .then(arrLink => {
         const arrNewLinks = arrLink.map(uniqueLink => {
           return uniqueLink.href
         })
-        console.log(`Total: ${arrNewLinks.length}\nUnique: ${onlyLinks(arrNewLinks).length}`)
+        resolve({
+          Total: arrNewLinks.length, 
+          Unique: onlyLinks(arrNewLinks).length
+        })
       })
-    )
   })
 }
 const validate = (ruta) => {

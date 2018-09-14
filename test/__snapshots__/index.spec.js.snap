@@ -1,13 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`resolver mdLinks(test/src/index.md, options) -> options.stats = true && options.validate = false 1`] = `
+exports[`Deberia retornar [{Total : 2, Unique : 2, Borken : 1}] 1`] = `
 Array [
-  undefined,
+  Object {
+    "Borken": 1,
+    "Total": 2,
+    "Unique": 2,
+  },
 ]
 `;
 
-exports[`resolver mdLinks(test/src/index.md, options) -> options.stats = true && options.validate = true 1`] = `
+exports[`Deberia retornar [{Total : 2, Unique: 2}] 1`] = `
 Array [
-  undefined,
+  Object {
+    "Total": 2,
+    "Unique": 2,
+  },
 ]
 `;
